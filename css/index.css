@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: ubuntulight, sans-serif;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+bg-space {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+mambo-logo,
+subtitle-area {
+  text-align: center;
+}
+
+home-container {
+  display: grid;
+}
+
+.black {
+  background-color: black;
+}
+
+social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+links-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+custom-cursor {
+  position: absolute;
+  background: transparent;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  will-change: transform;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+home-container * {
+  cursor: none;
+}
+
+home-container:hover custom-cursor {
+  background-color: blue;
+  animation: party-color 3s infinite;
+}
+
+mambo-logo img {
+  max-width: 15rem;
+  transition: filter 0.1s ease-in-out;
+}
+
+home-container:hover mambo-logo {
+  filter: contrast(0) brightness(2);
+  animation: party-logo-color 10s infinite;
+}
+
+.black:hover social-links,
+.black:hover subtitle-area {
+  filter: contrast(0) brightness(2);
+}
+
+links-content img {
+  max-height: 2rem;
+  height: 2rem;
+}
+
+links-content p {
+  font-size: 80%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+links-content a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease-in-out;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+links-content a:hover {
+  transform: scale(1.2);
+}
+
+@keyframes party-color {
+  0% {
+    fill: blue;
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    fill: green;
+    filter: hue-rotate(100deg);
+  }
+
+  100% {
+    filter: hue-rotate(0deg);
+    fill: red;
+  }
+}
+
+@keyframes party-logo-color {
+  0% {
+    filter: contrast(0) sepia(100%) hue-rotate(200deg) brightness(1) saturate(5);
+  }
+
+  25% {
+    filter: contrast(0) sepia(100%) hue-rotate(300deg) brightness(1.25) saturate(10);
+  }
+
+  50% {
+    filter: contrast(0) sepia(100%) hue-rotate(360deg) brightness(1.5) saturate(15);
+  }
+
+  75% {
+    filter: contrast(0) sepia(100%) hue-rotate(300deg) brightness(1.25) saturate(10);
+  }
+
+  100% {
+    filter: contrast(0) sepia(100%) hue-rotate(200deg) brightness(1) saturate(5);
+  }
+}
